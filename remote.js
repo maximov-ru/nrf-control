@@ -1,7 +1,7 @@
 /**
  * Created by maximov on 05.03.16.
  */
-var NRF24 = require("./index"),
+var NRF24 = require("nrf"),
     queue = require('queue-async');
 var pipes = [0xF1F0F0F0E1, 0xF1F0F0F0D2];
 var radios = [
