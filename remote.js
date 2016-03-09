@@ -24,10 +24,10 @@ try {
                console.log('=((');
             }
             console.log(ret);
-            tx.write("Hello?");
-            tx.write("blah blah blah");
-            tx.write("the number 4");
-            setInterval(tx.write.bind(tx, "beep"), 2e3);
+            //tx.write("Hello?");
+            //tx.write("blah blah blah");
+            //tx.write("the number 4");
+            //setInterval(tx.write.bind(tx, "beep"), 2e3);
             //setInterval(tx.write.bind(tx, "boop"), 2e3);
         });
 
