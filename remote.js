@@ -5,7 +5,7 @@ var NRF24 = require("nrf"),
     queue = require('queue-async');
 var pipes = [0xF1F0F0F0E1, 0xF1F0F0F0D2];
 var radios = [
-    {spiDev:"/dev/spidev0.0", cePin:25, irqPin:25},
+    {spiDev:"/dev/spidev0.0", cePin:25},
     {spiDev:"/dev/spidev0.1", cePin:25}
 ];
 
