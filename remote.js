@@ -12,8 +12,8 @@ try {
     radio.transmitPower('PA_MAX');//.autoRetransmit({count:15, delay:4000});
 
     radio.begin(function (e) {
-        var rx = radio.openPipe('rx', pipes[1]),
-            tx = radio.openPipe('tx', pipes[0]);
+        var rx = radio.openPipe('rx', pipes[0]),
+            tx = radio.openPipe('tx', pipes[1]);
         tx.on('ready', function () {
             var buf = new Uint32Array(1);
             buf[0] = 81;
