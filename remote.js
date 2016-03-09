@@ -30,9 +30,15 @@ try {
             //setInterval(tx.write.bind(tx, "beep"), 2e3);
             //setInterval(tx.write.bind(tx, "boop"), 2e3);
         });
+        tx.on('error',function(e){
+            console.log('err',e);
+        });
 
         rx.on('data', function (d) {
             console.log("Got data:", d.toString());
+        });
+        rx.on('error',function(e){
+            console.log('err2',e);
         });
     });
 }catch(e) {
