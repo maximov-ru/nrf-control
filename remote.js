@@ -15,9 +15,12 @@ radio.begin(function (e) {
     tx.on('ready', function () {
         var buf = new Uint32Array(1);
         buf[0] = 81;
-
-
-        var ret = tx.write(new Buffer(buf));
+        var ret = 'hz';
+        try {
+            ret = tx.write(new Buffer(buf));
+        }catch(e) {
+           console.log('=((');
+        }
         console.log(ret);
         //tx.write("Hello?");
         //tx.write("blah blah blah");
