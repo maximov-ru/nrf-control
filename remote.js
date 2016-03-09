@@ -23,7 +23,7 @@ try {
             }catch(e) {
                console.log('=((');
             }
-            console.log(ret);
+            console.log('myret',ret);
             //tx.write("Hello?");
             //tx.write("blah blah blah");
             //tx.write("the number 4");
