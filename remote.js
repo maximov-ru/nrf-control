@@ -19,15 +19,15 @@ try {
             buf[0] = 81;
             var ret = 'hz';
             try {
-                ret = tx.write(new Buffer(buf));
+                //ret = tx.write(new Buffer(buf));
             }catch(e) {
                console.log('=((');
             }
             console.log(ret);
-            //tx.write("Hello?");
-            //tx.write("blah blah blah");
-            //tx.write("the number 4");
-            //setInterval(tx.write.bind(tx, "beep"), 2e3);
+            tx.write("Hello?");
+            tx.write("blah blah blah");
+            tx.write("the number 4");
+            setInterval(tx.write.bind(tx, "beep"), 2e3);
             //setInterval(tx.write.bind(tx, "boop"), 2e3);
         });
 
