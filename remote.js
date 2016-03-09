@@ -19,7 +19,7 @@ try {
             buf[0] = 81;
             var ret = 'hz';
             try {
-                //ret = tx.write(new Buffer(buf));
+                ret = tx.write(new Buffer(buf));
             }catch(e) {
                console.log('=((');
             }
