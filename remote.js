@@ -23,6 +23,7 @@ function setupRadio(radio, cb) {
 }
 q.awaitAll(function (e,d) {
     if (e) throw e;
+    console.log(d);
 
     d[0]._debug = true;
 
