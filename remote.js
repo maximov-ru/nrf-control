@@ -13,7 +13,7 @@ radio.begin(function (e) {
     var rx = radio.openPipe('rx', pipes[1]),
         tx = radio.openPipe('tx', pipes[0]);
     tx.on('ready', function () {
-        var ret = tx.write(new ArrayBuffer(8));
+        var ret = tx.write(Buffer(8));
         console.log(ret);
         //tx.write("Hello?");
         //tx.write("blah blah blah");
