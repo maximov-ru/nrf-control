@@ -12,7 +12,7 @@ try {
     radio.transmitPower('PA_MAX').autoRetransmit({count:5, delay:4000});
 
     radio.begin(function (e) {
-        var rx = radio.openPipe('rx', pipes[1]),
+        var rx = radio.openPipe('rx', pipes[1],{size: 4}),
             tx = radio.openPipe('tx', pipes[0]);
         tx.on('ready', function () {
             var buf = new Uint32Array(1);
@@ -25,7 +25,7 @@ try {
             }
             console.log('myret',ret);
             if(ret === true){
-                radio.startListening();
+                //tx.
             }
             //tx.write("Hello?");
             //tx.write("blah blah blah");
