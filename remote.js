@@ -3,7 +3,7 @@
  */
 var NRF24 = require("nrf"),
     queue = require('queue-async');
-var pipes = [0xF1F0F0F0E1, 0xF1F0F0F0D2];
+var pipes = [0xF0F0F0F0E1, 0xF0F0F0F0D2];
 var radiocfg = {spiDev:"/dev/spidev0.0", cePin:25};
 var radio = NRF24.connect(radiocfg.spiDev, radiocfg.cePin);
 try {
