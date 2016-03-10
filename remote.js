@@ -13,7 +13,7 @@ try {
     radio.setStates({DYNPD:0x00, FEATURE:0x00,EN_DPL:0});
 
     radio.begin(function (e) {
-        var rx = radio.openPipe('rx', pipes[0],{size: 32}),
+        var rx = radio.openPipe('rx', pipes[0],{size: 'auto'}),
             tx = radio.openPipe('tx', pipes[1],{autoAck:false});
         tx.on('ready', function () {
             radio.printDetails();
