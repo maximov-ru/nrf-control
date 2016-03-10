@@ -13,7 +13,7 @@ try {
 
     radio.begin(function (e) {
         var rx = radio.openPipe('rx', pipes[1],{size: 4}),
-            tx = radio.openPipe('tx', pipes[0]);
+            tx = radio.openPipe('tx', pipes[0],{autoAck:false});
         tx.on('ready', function () {
             radio.printDetails();
             var buf = new Uint32Array(1);
