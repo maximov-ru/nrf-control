@@ -12,6 +12,7 @@ try {
     radio.transmitPower('PA_MAX').autoRetransmit({count:5, delay:4000});
 
     radio.begin(function (e) {
+        radio.printDetails();
         var rx = radio.openPipe('rx', pipes[1],{size: 4}),
             tx = radio.openPipe('tx', pipes[0]);
         tx.on('ready', function () {
