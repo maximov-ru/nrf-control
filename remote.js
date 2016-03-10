@@ -10,10 +10,10 @@ try {
     //radio._debug = true;
     radio.dataRate('1Mbps').crcBytes(2);
     radio.transmitPower('PA_MAX').autoRetransmit({count:5, delay:4000});
-    radio.setStates({DYNPD:0x00, FEATURE:0x00});
+    radio.setStates({DYNPD:0x00, FEATURE:0x00,EN_DPL:0});
 
     radio.begin(function (e) {
-        var rx = radio.openPipe('rx', pipes[0],{size: 4}),
+        var rx = radio.openPipe('rx', pipes[0],{size: 32}),
             tx = radio.openPipe('tx', pipes[1],{autoAck:false});
         tx.on('ready', function () {
             radio.printDetails();
