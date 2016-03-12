@@ -15,7 +15,7 @@ try {
     radio.begin(function (e) {
         var rx = radio.openPipe('rx', pipes[0],{size: 'auto',autoAck:false,'ack':false}),
             tx = radio.openPipe('tx', pipes[1],{size: 'auto',autoAck:false,ack:false});
-        radio.setStates({FEATURE:0x04});
+        radio.setStates({EN_RXADDR:0x03});
         tx.on('ready', function () {
             radio.printDetails();
             var buf = new Uint32Array(1);
