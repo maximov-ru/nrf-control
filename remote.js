@@ -13,8 +13,8 @@ try {
     //radio.setStates({DYNPD:0x00, FEATURE:0x00,EN_DPL:0});
 
     radio.begin(function (e) {
-        var rx = radio.openPipe('rx', pipes[0],{size: 'auto',autoAck:false}),
-            tx = radio.openPipe('tx', pipes[1],{size: 'auto',autoAck:false});
+        var rx = radio.openPipe('rx', pipes[0],{size: 'auto',autoAck:true}),
+            tx = radio.openPipe('tx', pipes[1],{size: 'auto',autoAck:true});
         //radio.setStates({DYNPD:0x00, FEATURE:0x00,EN_DPL:0});
         tx.on('ready', function () {
             radio.printDetails();
