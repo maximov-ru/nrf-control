@@ -415,7 +415,7 @@ exports.connect = function (spi,ce,irq) {
     nrf.begin = function (cb) {
         nrf.setCE('low','stby2a');
         var clearIRQ = {RX_DR:true, TX_DS:true, MAX_RT:true},
-            features = {EN_DPL:true, EN_ACK_PAY:true, EN_DYN_ACK:true};
+            features = {EN_DPL:false, EN_ACK_PAY:false, EN_DYN_ACK:false};
         nrf.reset(_extend({PWR_UP:true, PRIM_RX:false, EN_RXADDR:0x00},clearIRQ,features), function (e) {
             if (e) return nrf.emit('error', e);
             nrf._irqOn();           // NOTE: on before any pipes to facilite lower-level sendPayload use
@@ -675,6 +675,10 @@ exports.connect = function (spi,ce,irq) {
             });
         });
         function _h(n) { return (Buffer.isBuffer(n)) ? '0x'+n.toString('hex') : '0x'+n.toString(16); }
+    };
+
+    nrf.enableDynamicPayloads = function (cb){
+
     };
 
     nrf.on('interrupt', function (d) { if (nrf._debug) console.log("IRQ.", d); });
